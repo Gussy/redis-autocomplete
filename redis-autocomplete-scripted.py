@@ -44,8 +44,8 @@ return results
 """
 
 if len(sys.argv) == 2 and sys.argv[1] == "--flush":
-    print "Flushing Database"
-    r.flushdb()
+    print "Deleteing 'compl' key"
+    r.delete('compl')
 
 if not r.exists("compl"):
     t0 = time.time()

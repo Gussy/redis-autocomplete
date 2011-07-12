@@ -9,8 +9,8 @@ r = redis.Redis(host='localhost', port=6379, db=0)
 filename = "female-names.txt"
 
 if len(sys.argv) == 2 and sys.argv[1] == "--flush":
-    print "Flushing Database"
-    r.flushdb()
+    print "Deleteing 'compl' key"
+    r.delete('compl')
 
 if not r.exists("compl"):
     t0 = time.time()
